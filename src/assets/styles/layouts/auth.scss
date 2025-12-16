@@ -1,0 +1,170 @@
+/**
+ * 认证页面布局样式
+ */
+
+@use "sass:map";
+@use "../base/variables.scss" as *;
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-background);
+  border-radius: $border-radius-xl;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  padding: 2.5rem;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--theme-color-rgb), 0.1);
+  
+  @media (min-width: map.get($breakpoints, md)) {
+    padding: 3rem;
+  }
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  
+  .auth-logo {
+    margin-bottom: 1.5rem;
+    
+    img {
+      height: 60px;
+      width: auto;
+    }
+  }
+  
+  .auth-title {
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .auth-subtitle {
+    font-size: $font-size-base;
+    color: var(--secondary-text-color);
+  }
+}
+
+.auth-form {
+  margin-bottom: 1.5rem;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 2rem;
+  
+  .auth-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    
+    a {
+      color: var(--secondary-text-color);
+      font-size: $font-size-sm;
+      
+      &:hover {
+        color: var(--theme-color);
+      }
+    }
+  }
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-color);
+  }
+  
+  .auth-divider-text {
+    padding: 0 1rem;
+    color: var(--secondary-text-color);
+    font-size: $font-size-sm;
+  }
+}
+
+// 背景装饰
+.background-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-ball {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  mix-blend-mode: lighten;
+  
+  // iOS设备完全隐藏装饰球
+  @supports (-webkit-touch-callout: none) {
+    display: none;
+  }
+}
+
+.ball-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(var(--theme-color-rgb), 0.4),
+    rgba(var(--theme-color-rgb), 0.1) 70%,
+    transparent
+  );
+  top: -10%;
+  left: -10%;
+  animation: floatingBall1 25s infinite ease-in-out;
+}
+
+.ball-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at 70% 70%, 
+    rgba(167, 71, 254, 0.35),
+    rgba(167, 71, 254, 0.08) 70%,
+    transparent
+  );
+  top: 40%;
+  right: -5%;
+  animation: floatingBall2 30s infinite ease-in-out;
+}
+
+.ball-3 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(55, 222, 201, 0.3),
+    rgba(55, 222, 201, 0.05) 70%,
+    transparent
+  );
+  bottom: -10%;
+  left: 20%;
+  animation: floatingBall3 35s infinite ease-in-out;
+} 

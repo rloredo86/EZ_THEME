@@ -1,0 +1,16 @@
+/**
+ * 样式入口文件
+ */
+
+// 导入基础样式
+@use "./base/variables.scss" as *;
+@use "./base/reset.scss" as *;
+@use "./base/animations.scss" as *;
+@use "./base/scrollbar.scss" as *;
+
+// 导入组件样式
+@use "./components/form.scss" as *;
+@use "./components/icons.scss" as *;
+
+// 导入布局样式
+@use "./layouts/auth.scss" as *; 

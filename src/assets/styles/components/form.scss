@@ -1,0 +1,196 @@
+/**
+ * 表单样式
+ */
+
+@use "sass:map";
+@use "../base/variables.scss" as *;
+
+// 表单组
+.form-group {
+  margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// 表单标签
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: $font-weight-medium;
+  color: var(--text-color);
+}
+
+// 表单控件
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--card-background);
+  background-clip: padding-box;
+  border: none;
+  border-radius: $border-radius;
+  box-shadow: inset 0 0 0 1px rgba(var(--text-color-rgb), 0.08);
+  transition: box-shadow 0.3s ease;
+  transform: none !important;
+  
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(var(--theme-color-rgb), 0.3);
+    outline: none;
+  }
+  
+  &:disabled {
+    background-color: rgba(var(--text-color-rgb), 0.05);
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  &::placeholder {
+    color: rgba(var(--text-color-rgb), 0.4);
+  }
+}
+
+// 表单帮助文本
+.form-text {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: $font-size-sm;
+  color: var(--secondary-text-color);
+}
+
+// 表单错误文本
+.form-error {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: $font-size-sm;
+  color: var(--error-color);
+}
+
+// 按钮
+.btn {
+  display: inline-block;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  padding: 0.75rem 1.5rem;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  border-radius: $border-radius;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+// 主要按钮
+.btn-primary {
+  color: var(--btn-text-color, #fff);
+  background-color: var(--theme-color);
+  border: 1px solid var(--theme-color);
+  
+  &:hover, &:focus {
+    background-color: rgba(var(--theme-color-rgb), 0.85);
+    border-color: var(--theme-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(var(--theme-color-rgb), 0.3);
+  }
+  
+  &:disabled {
+    background-color: var(--theme-color);
+    border-color: var(--theme-color);
+  }
+}
+
+// 次要按钮
+.btn-secondary {
+  color: var(--text-color);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  position: relative;
+  
+  &:hover, &:focus {
+    background-color: rgba(var(--card-background-rgb), 0.5);
+    border-color: var(--theme-color);
+    color: var(--theme-color);
+    -webkit-text-fill-color: var(--theme-color);
+    background-image: none;
+  }
+}
+
+// 轮廓按钮
+.btn-outline {
+  color: var(--theme-color);
+  background-color: transparent;
+  border: 1px solid var(--theme-color);
+  
+  &:hover, &:focus {
+    background-color: rgba(var(--theme-color-rgb), 0.1);
+  }
+  
+  &:disabled {
+    color: var(--theme-color);
+    opacity: 0.5;
+  }
+}
+
+// 链接按钮
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: var(--theme-color);
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  
+  &:hover, &:focus {
+    color: var(--theme-hover-color, rgba(var(--theme-color-rgb), 0.8));
+    text-decoration: none;
+  }
+}
+
+// 按钮尺寸
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// 表单布局
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  
+  > .form-group {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    flex: 0 0 100%;
+    max-width: 100%;
+    
+    @media (min-width: map.get($breakpoints, md)) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}
+
+// 添加文字渐变动画
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} 

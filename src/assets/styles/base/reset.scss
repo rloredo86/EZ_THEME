@@ -1,0 +1,152 @@
+/**
+ * 重置与基础样式
+ */
+
+@use "sass:map";
+@use "./variables.scss" as *;
+
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* 响应式字体大小 */
+@media (max-width: map.get($breakpoints, sm)) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a {
+  color: var(--theme-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 响应式容器 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (max-width: map.get($breakpoints, md)) {
+  .container {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* 辅助类 */
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden-xs {
+  @media (max-width: map.get($breakpoints, xs)) {
+    display: none !important;
+  }
+}
+
+.hidden-sm {
+  @media (max-width: map.get($breakpoints, sm)) {
+    display: none !important;
+  }
+}
+
+.visible-xs {
+  display: none !important;
+  @media (max-width: map.get($breakpoints, xs)) {
+    display: block !important;
+  }
+}
+
+.visible-sm {
+  display: none !important;
+  @media (max-width: map.get($breakpoints, sm)) {
+    display: block !important;
+  }
+}
+
+// 清除浮动
+.clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 文本溢出省略号
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 多行文本溢出省略号
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// 禁止选择文本
+.no-select {
+  user-select: none;
+} 

@@ -1,0 +1,171 @@
+/**
+ * 全局动画样式
+ */
+
+@use "./variables.scss" as *;
+
+/* 页面过渡动画辅助类 */
+.page-transitioning {
+  overflow: hidden;
+}
+
+/* 全局过渡动画 */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+}
+
+/* 内容块过渡动画 */
+.content-fade-enter-active,
+.content-fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.content-fade-enter-from,
+.content-fade-leave-to {
+  opacity: 0;
+}
+
+/* 弹出动画 */
+.pop-enter-active {
+  animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.pop-leave-active {
+  animation: pop-out 0.2s forwards;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pop-out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/**
+ * 动画样式
+ */
+
+// 淡入淡出
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+// 上下滑动
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// 缩放
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+// 背景色球动画
+@keyframes floatingBall1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5%, 10%) rotate(90deg); }
+  50% { transform: translate(2%, 5%) rotate(180deg); }
+  75% { transform: translate(-3%, 8%) rotate(270deg); }
+}
+
+@keyframes floatingBall2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-8%, -5%) rotate(-90deg); }
+  50% { transform: translate(-4%, -10%) rotate(-180deg); }
+  75% { transform: translate(-6%, -2%) rotate(-270deg); }
+}
+
+@keyframes floatingBall3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(6%, -8%) rotate(120deg); }
+  66% { transform: translate(-4%, -4%) rotate(240deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+// 动画类
+.fade-in {
+  animation: fadeIn $transition-time-base ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut $transition-time-base ease forwards;
+}
+
+.slide-in-down {
+  animation: slideInDown $transition-time-base ease forwards;
+}
+
+.slide-in-up {
+  animation: slideInUp $transition-time-base ease forwards;
+}
+
+.zoom-in {
+  animation: zoomIn $transition-time-base ease forwards;
+}
+
+.zoom-out {
+  animation: zoomOut $transition-time-base ease forwards;
+} 

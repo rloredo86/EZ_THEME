@@ -1,0 +1,64 @@
+/**
+ * 自定义滚动条样式
+ */
+
+/* Webkit浏览器滚动条样式 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--input-bg-color, rgba(0, 0, 0, 0.05));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-color);
+  border-radius: 4px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--theme-hover-color, #4bc8a2);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* Firefox 滚动条样式 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--theme-color) var(--input-bg-color, rgba(0, 0, 0, 0.05));
+}
+
+/* 确保滚动效果平滑 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 暗色模式滚动条调整 */
+.dark-theme {
+  /* 暗色模式下轨道颜色调整 */
+  ::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* 暗色模式下滚动条角落透明 */
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+/* 多彩滚动条效果（可选） */
+.gradient-scrollbar {
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--theme-color), #a747fe);
+  }
+  
+  * {
+    scrollbar-color: var(--theme-color) rgba(0, 0, 0, 0.05);
+  }
+} 

